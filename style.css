@@ -1,0 +1,288 @@
+:root {
+    --primary-color: #00aaff;
+    --text-color: #ffffff;
+    --bg-color: #0d1226;
+    --light-bg-color: #1a1a3a;
+    --spacing: 3rem;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Section Hero */
+.hero-section {
+    position: relative;
+    background-image: url('sms.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.service-name {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.service-tagline {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+#cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#cta-button:hover {
+    background-color: #0088cc;
+    transform: translateY(-3px);
+}
+
+main {
+    padding: var(--spacing) 0;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--light-bg-color);
+}
+
+.product-description {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.product-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.product-image {
+    flex: 1;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.left-aligned .product-description {
+    order: 1;
+}
+
+.left-aligned .product-image {
+    order: 2;
+}
+
+.right-aligned .product-description {
+    order: 2;
+}
+
+.right-aligned .product-image {
+    order: 1;
+}
+
+/* Contact Section */
+#contact-section {
+    text-align: center;
+    padding: var(--spacing) 0;
+    background-color: var(--light-bg-color);
+}
+
+.contact-links {
+    margin-top: 2rem;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--light-bg-color);
+}
+
+/* Section de capacités / bonus */
+#qr-capabilities, #gallery {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.capability-item {
+    background-color: var(--light-bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.capability-item:hover {
+    transform: translateY(-10px);
+}
+
+.capability-item img {
+    height: auto;
+    width: 80%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.capability-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.capability-item p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .product-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .product-description {
+        order: 1; /* Le texte est toujours en haut */
+        padding: 0 1rem;
+    }
+    
+    .product-image {
+        order: 2; /* L'image est toujours en bas */
+        margin-top: 2rem;
+    }
+
+    /* Les règles ci-dessous n'ont plus d'effet et peuvent être retirées si besoin, mais je les laisse pour ne pas rompre la cohérence */
+    .left-aligned .product-description {
+        order: 1;
+    }
+    .left-aligned .product-image {
+        order: 2;
+    }
+    .right-aligned .product-description {
+        order: 1;
+    }
+    .right-aligned .product-image {
+        order: 2;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-name {
+        font-size: 2.2rem;
+    }
+    .service-tagline {
+        font-size: 1.1rem;
+    }
+    #cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
