@@ -21,6 +21,71 @@ body {
     overflow-x: hidden;
 }
 
+:root {
+    --primary-color: #00aaff;
+    --text-color: #ffffff;
+    --bg-color: #0d1226;
+    --light-bg-color: #1a1a3a;
+    --spacing: 3rem;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Barre de navigation --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem; /* Diminution du padding pour une barre plus fine */
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 1.4rem; /* Légèrement plus petite */
+    font-weight: 700;
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Espacement réduit entre les liens */
+}
+
+.nav-link {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem; /* Légèrement plus petite */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Le reste du CSS... */
+
 /* Section Hero */
 .hero-section {
     position: relative;
@@ -30,6 +95,7 @@ body {
     background-repeat: no-repeat;
     color: white;
     padding: 80px 20px;
+    padding-top: 10rem; /* Ajout d'espace pour le menu */
     text-align: center;
     min-height: 500px;
     display: flex;
@@ -248,27 +314,13 @@ footer {
     }
     
     .product-description {
-        order: 1; /* Le texte est toujours en haut */
+        order: 1;
         padding: 0 1rem;
     }
     
     .product-image {
-        order: 2; /* L'image est toujours en bas */
+        order: 2;
         margin-top: 2rem;
-    }
-
-    /* Les règles ci-dessous n'ont plus d'effet et peuvent être retirées si besoin, mais je les laisse pour ne pas rompre la cohérence */
-    .left-aligned .product-description {
-        order: 1;
-    }
-    .left-aligned .product-image {
-        order: 2;
-    }
-    .right-aligned .product-description {
-        order: 1;
-    }
-    .right-aligned .product-image {
-        order: 2;
     }
 
     .capabilities-grid {
