@@ -30,15 +30,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 3rem; /* Diminution du padding pour une barre plus fine */
+    padding: 1rem 3rem; /* Hauteur de la barre légèrement augmentée pour l'harmonie */
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95); /* Fond blanc plus opaque */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-brand {
-    font-size: 1.4rem; /* Légèrement plus petite */
-    font-weight: 700;
+    font-size: 1.7rem; /* Taille du logo ajustée */
+    font-weight: 900;
     color: var(--bg-color);
     text-decoration: none;
 }
@@ -46,14 +46,14 @@ body {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 1.5rem; /* Espacement réduit entre les liens */
+    gap: 2rem; /* Espacement ajusté entre les liens */
 }
 
 .nav-link {
     color: var(--bg-color);
     text-decoration: none;
     font-weight: 400;
-    font-size: 1rem; /* Légèrement plus petite */
+    font-size: 1.2rem; /* Taille de la police des liens augmentée */
     transition: color 0.3s ease;
 }
 
@@ -71,7 +71,7 @@ body {
     background-repeat: no-repeat;
     color: white;
     padding: 80px 20px;
-    padding-top: 10rem; /* Ajout d'espace pour le menu */
+    padding-top: 10rem;
     text-align: center;
     min-height: 500px;
     display: flex;
@@ -165,13 +165,6 @@ main {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
-/* Ces règles ne sont plus nécessaires avec la media query ci-dessous */
-/* .left-aligned .product-description { order: 1; }
-.left-aligned .product-image { order: 2; }
-.right-aligned .product-description { order: 2; }
-.right-aligned .product-image { order: 1; } */
-
 
 /* Contact Section */
 #contact-section {
@@ -275,35 +268,38 @@ footer {
 /* Media Queries pour les petits écrans */
 @media (max-width: 768px) {
     .product-item {
-        flex-direction: column; /* Les éléments s'empilent verticalement */
+        flex-direction: column;
         text-align: center;
-        padding: 2rem 1rem; /* Ajustement du padding */
+        padding: 2rem 1rem;
     }
     
     .product-description {
-        order: 1; /* Le texte apparaît en premier (en haut) */
+        order: 1;
         padding: 0 1rem;
-        margin-bottom: 1.5rem; /* Ajout d'une marge sous le texte */
+        margin-bottom: 1.5rem;
     }
     
     .product-image {
-        order: 2; /* L'image apparaît en second (en bas) */
-        margin-top: 0; /* Pas de marge inutile en haut de l'image */
+        order: 2;
+        margin-top: 0;
     }
 
     /* Ajustement de la navbar sur petits écrans */
     .navbar {
-        padding: 0.8rem 1.5rem; /* Diminution du padding horizontal sur mobile */
+        padding: 0.8rem 1.5rem;
     }
     .nav-menu {
-        gap: 1rem; /* Réduction de l'espace entre les liens de menu */
+        gap: 1rem;
     }
     .nav-brand, .nav-link {
-        font-size: 0.9rem; /* Taille de police légèrement réduite */
+        font-size: 1.1rem;
+    }
+    .nav-brand {
+        font-size: 1.2rem;
     }
 
     .capabilities-grid {
-        grid-template-columns: 1fr; /* Une seule colonne pour les capacités */
+        grid-template-columns: 1fr;
     }
 
     .service-name {
