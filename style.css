@@ -21,29 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-:root {
-    --primary-color: #00aaff;
-    --text-color: #ffffff;
-    --bg-color: #0d1226;
-    --light-bg-color: #1a1a3a;
-    --spacing: 3rem;
-    --font-family: 'Roboto', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
 /* --- Barre de navigation --- */
 .navbar {
     position: absolute;
@@ -84,7 +61,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Le reste du CSS... */
 
 /* Section Hero */
 .hero-section {
@@ -190,21 +166,12 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.left-aligned .product-description {
-    order: 1;
-}
+/* Ces règles ne sont plus nécessaires avec la media query ci-dessous */
+/* .left-aligned .product-description { order: 1; }
+.left-aligned .product-image { order: 2; }
+.right-aligned .product-description { order: 2; }
+.right-aligned .product-image { order: 1; } */
 
-.left-aligned .product-image {
-    order: 2;
-}
-
-.right-aligned .product-description {
-    order: 2;
-}
-
-.right-aligned .product-image {
-    order: 1;
-}
 
 /* Contact Section */
 #contact-section {
@@ -305,26 +272,38 @@ footer {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Media Queries */
+/* Media Queries pour les petits écrans */
 @media (max-width: 768px) {
     .product-item {
-        flex-direction: column;
+        flex-direction: column; /* Les éléments s'empilent verticalement */
         text-align: center;
-        padding: 2rem 0;
+        padding: 2rem 1rem; /* Ajustement du padding */
     }
     
     .product-description {
-        order: 1;
+        order: 1; /* Le texte apparaît en premier (en haut) */
         padding: 0 1rem;
+        margin-bottom: 1.5rem; /* Ajout d'une marge sous le texte */
     }
     
     .product-image {
-        order: 2;
-        margin-top: 2rem;
+        order: 2; /* L'image apparaît en second (en bas) */
+        margin-top: 0; /* Pas de marge inutile en haut de l'image */
+    }
+
+    /* Ajustement de la navbar sur petits écrans */
+    .navbar {
+        padding: 0.8rem 1.5rem; /* Diminution du padding horizontal sur mobile */
+    }
+    .nav-menu {
+        gap: 1rem; /* Réduction de l'espace entre les liens de menu */
+    }
+    .nav-brand, .nav-link {
+        font-size: 0.9rem; /* Taille de police légèrement réduite */
     }
 
     .capabilities-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne pour les capacités */
     }
 
     .service-name {
